@@ -1,4 +1,4 @@
-# Digital Clock
+# Digital Clock and Seven-Segment Display
 
 This expression projects a skeuomorphic seven-segment display digital clock. In fact, its digits can be customized to whatever single-digit numbers the user may desire with `diga`, `digb`, `digc`, and `digd` (left to right).
 
