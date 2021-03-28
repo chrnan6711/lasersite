@@ -6,8 +6,10 @@ This expression allows for the graphing of real functions with two-dimensional v
 
 All variables are explained in the second section of the expression.
 
-```
+<details>
+  <summary>View code</summary>
 
+```
 xi = lerp((index%(res+1))/res,-100,100)/(10*scale);
 yi = lerp(floor(index/(res+1))/res,-100,100)/(10*scale);
 
@@ -86,5 +88,5 @@ s = 1;
 v = if(index > 400-(3*axisn+1),1,if(index < (res+1)^2,1,0));
 
 # Expression by Chrnan6710
-
 ```
+</details>
