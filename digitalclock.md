@@ -10,8 +10,8 @@ This expression projects a skeuomorphic seven-segment display digital clock. In 
 
 <details>
 <summary>View code</summary>
-```
 
+```
 brightness = 0.7;
 
 timen = time + 0;
@@ -134,6 +134,5 @@ if(digd == 9 & 35 < mindex & mindex < 45, 0, 1
 )))))))))), 0
 
 ))))));
-
 ```
 <details>
