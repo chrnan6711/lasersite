@@ -4,4 +4,6 @@ I'll be hosting all my expressions and whatnot here so I can organize them and u
 
 I might also write some breakdowns of the expressions I create so others can use them for inspiration, reference, and learning purposes.
 
+---
+
 ### Expressions
