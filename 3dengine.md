@@ -14,8 +14,10 @@ This expression allows for the projection of points in three-dimensional space. 
 
 `zoom` resizes the projection.
 
+<details>
+  <summary>View code</summary>
+  
 ```
-
 ###################### Coordinates ########################
 
 xi = 0;           #Left-right
@@ -62,5 +64,5 @@ y' = zoom*(yi*sx+(xi*sy+zi*cy)*cx)*if(proj,1,(d/(d+((xi*cy-zi*sy)*sz+(yi*cx-(xi*
 #########Make sure to use rectangular grid 20x20!########## 
 
 #################Expression by Chrnan6710##################
-
 ```
+</details>
