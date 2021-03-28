@@ -1,3 +1,5 @@
+# Three-dimensional Graphing
+
 This expression allows for the graphing of real functions with two-dimensional variables.
 
 ### Variables
