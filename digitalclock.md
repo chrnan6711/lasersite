@@ -8,8 +8,8 @@ This expression projects a skeuomorphic seven-segment display digital clock. In 
 
 `timen` allows the user to shift the input time (Unix time) by some amount of seconds.
 
-
-
+<details>
+<summary>View code</summary>
 ```
 
 brightness = 0.7;
@@ -136,3 +136,4 @@ if(digd == 9 & 35 < mindex & mindex < 45, 0, 1
 ))))));
 
 ```
+<details>
