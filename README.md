@@ -7,8 +7,16 @@ I might also write some breakdowns of the expressions I create so others can use
 ---
 
 ### Expressions
+
+Plain code ready for immediate use.
+
 [Digital Clock and Seven-Segment Display](digitalclock.md)
 
 [Three-dimensional Engine](3dengine.md)
 
 [Three-dimensional Graphing](3dgraphing.md)
+
+### Programs
+
+Javascript programs which can create or modify expressions for you.
+
