@@ -2,7 +2,7 @@
 
 This javascript program allows one to create three-dimensional vector graphics through interpolation between vertices. It asks for the desired amount of vertices, the desired amount of edges, the coordinates of the vertices, and the desired connections between vertices.
 
-The resulting expression uses my [three-dimensional engine](3dengine.md) which I plan on improving, so this will likely be updated.
+The resulting laser code should then be placed in the "Coordinates" section of the [three-dimensional engine](3dengine.md).
 <details>
   <summary>View code</summary>
 
