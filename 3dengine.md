@@ -54,12 +54,21 @@ s = 1;
 
 ######## Calculations (don't worry about these) ###########
 
-cx = cos(xr); cy = cos(yr); cz = cos(zr);
-sx = sin(xr); sy = sin(yr); sz = sin(zr);
-
-x' = zoom*((xi*cy-zi*sy)*cz-(yi*cx-(xi*sy+zi*cy)*sx)*sz)*if(proj,1,(d/(d+((xi*cy-zi*sy)*sz+(yi*cx-(xi*sy+zi*cy)*sx)*cz)))); #Horizontal output
-
-y' = zoom*(yi*sx+(xi*sy+zi*cy)*cx)*if(proj,1,(d/(d+((xi*cy-zi*sy)*sz+(yi*cx-(xi*sy+zi*cy)*sx)*cz)))); #Vertical output
+xy = xi*cos(yr) - zi*sin(yr);
+                                     #y-rotations
+zy = xi*sin(yr) + zi*cos(yr);
+ 
+yx = yi*cos(xr) - zy*sin(xr);
+                                     #x-rotations
+zx = yi*sin(xr) + zy*cos(xr);
+ 
+xz = xy*cos(zr) - yx*sin(zr);
+                                     #z-rotations
+yz = xy*sin(zr) + yx*cos(zr);
+ 
+x' = zoom*xz*if(proj,1,(d/(d+yz)));  #Horizontal output
+ 
+y' = zoom*zx*if(proj,1,(d/(d+yz)));  #Vertical output
 
 #########Make sure to use rectangular grid 20x20!########## 
 
