@@ -6,7 +6,7 @@ This expression allows for the projection of points in three-dimensional space. 
 
 `xi`, `yi`, and `zi` are the coordinate inputs, like `x'` and `y'`.
 
-`xr`, `yr`, and `zr` are the angles of rotation in radians (2π radians = 180 deg). The y-rotation is applied first, then x, then z. I am working on a new version which allows one to change the order, since three-dimensional rotations are noncommutative.
+`xr`, `yr`, and `zr` are the angles of rotation in radians (2π radians = 180 deg). The y-rotation is applied first, then x, then z. I am working on a new version which allows one to change the order, since three-dimensional rotations are noncommutative (order of application matters).
 
 `proj` determines projection style; 0 enables perspective (realistic) projection and 1 enables parallel projection.
 
