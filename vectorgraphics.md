@@ -71,4 +71,4 @@ console.log(output+xi+"\n\n"+yi+"\n\n"+zi);
 
 </details>
 
-Or [try it yourself!](vectorgraphicsjs.html)
+You can [use it here for yourself!](vectorgraphicsjs.html)
