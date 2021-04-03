@@ -64,14 +64,14 @@ Currently, the code displays a 7x7x7 cube in perspective projection (realistic).
 
 ### Parameters
 
-`xi`, `yi`, and `zi` are the coordinate inputs, like `x'` and `y'`.
+- `xi`, `yi`, and `zi` are the coordinate inputs, like `x'` and `y'`.
 
-`xr`, `yr`, and `zr` are the angles of rotation in radians (2π radians = 180 deg). The y-rotation is applied first, then x, then z.
+- `xr`, `yr`, and `zr` are the angles of rotation in radians (2π radians = 180 deg). The y-rotation is applied first, then x, then z.
 
-`r1`, `r2`, and `r3` specify the order in which the axes of rotation are applied. This is necessary because three-dimensional rotation is non-commutative (order matters).
+- `r1`, `r2`, and `r3` specify the order in which the axes of rotation are applied. This is necessary because three-dimensional rotation is non-commutative (order matters).
 
-`proj` determines projection style; 0 enables perspective (realistic) projection and 1 enables parallel projection (think Roller Coaster Tycoon 2).
+- `proj` determines projection style; 0 enables perspective (realistic) projection and 1 enables parallel projection (think Roller Coaster Tycoon 2).
 
-`d` determines the distance of the origin in three-dimensional space from the "camera".
+- `d` determines the distance of the origin in three-dimensional space from the "camera".
 
-`zoom` resizes the projection.
+- `zoom` resizes the projection.
