@@ -64,7 +64,7 @@ Currently, the code displays a 7x7x7 cube in perspective projection (realistic).
 
 ### Parameters
 
-- `xi`, `yi`, and `zi` are the coordinate inputs, like `x'` and `y'`.
+- `xi`, `yi`, and `zi` are the left-right, forward-backward, and top-bottom coordinate inputs respectively, like `x'` and `y'`.
 
 - `xr`, `yr`, and `zr` are the angles of rotation in radians (2π radians = 180 deg). The y-rotation is applied first, then x, then z.
 
