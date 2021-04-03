@@ -17,13 +17,13 @@ yi = lerp(floor(index/(res+1))/res,-100,100)/(10*scale);
 
 #Parameters:
 
-res = 15;
+res = 17;
 #Amount of plotted points in x and y directions
 
 scale = 1;
 #The "zoom" of the function, larger = farther in
 
-axis = 1;
+axis = 7;
 #Amount of plotted points in each direction of the axes
 
 cs = 0.5;
@@ -90,3 +90,15 @@ v = if(index > 400-(3*axisn+1),1,if(index < (res+1)^2,1,0));
 # Expression by Chrnan6710
 ```
 </details>
+
+### Examples
+
+Here are some fun functions to try!
+
+Coffee filter: ```z = sqrt(xi^2 + yi^2)```
+
+Saddle: ```z = 0.05(xi^2 - yi^2)```
+
+Dome: ```z = 10sqrt(1 - 0.01xi^2 - 0.01yi^2)```
+
+Waves: ```z = cos(sqrt(xi^2 + yi^2) - 2*time)```
