@@ -60,7 +60,7 @@ y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
 ```
 </details>
 
-Currently, the code displays a 7x7x7 cube in perspective projection (realistic).
+Currently, the code displays a 7x7x7 cube in perspective projection (realistic) with cyclic hue as distance from the origin increases.
 
 ### Parameters
 
