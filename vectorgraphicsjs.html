@@ -7,23 +7,138 @@
 
 <p>Here's what the program will ask for, in order:</p>
 
-<p>•Number of desired vertices</p>
+<p>• Number of desired vertices</p>
 
-<p>•Number of desired edges</p>
+<p>• Number of desired edges</p>
 
-<p>•x, y, and z coordinates of the vertices</p>
+<p>• x, y, and z coordinates of the vertices</p>
 
-<p>•Start and end vertices of each edge</p>
+<p>• Start and end vertices of each edge</p>
 
 <button onclick="get()">Start the program!</button>
 
 <p id="demo"></p>
 
 <script>
-let x = "Yo";
 function get() {
-  document.getElementById("demo").innerHTML = x;
+let vcnt = prompt("Amount of vertices?");
+let ecnt = prompt("Amount of edges?");
+let eden = Math.floor((400-vcnt)/ecnt);
+let output = "";
+
+let x = []; //Array of x coordinates
+let y = []; //Array of y coordinates
+let z = []; //Array of z coordinates
+let e1 = []; //Array of connection starts
+let e2 = []; //Array of connection ends
+
+for(i = 1; i <= vcnt; i++)
+	{
+  	x[i] = prompt("X-coordinate for vertex #"+i).toString();
+    y[i] = prompt("Y-coordinate for vertex #"+i).toString();
+    z[i] = prompt("Z-coordinate for vertex #"+i).toString();
+  } //Gets coordinates
+  
+for(i = 1; i <= ecnt; i++)
+	{
+  	e1[i] = prompt("Connect which vertex to another? (Connection number "+i+")");
+    e2[i] = prompt("Connect it to which vertex? (Connection number "+i+")")
+  } //Gets connections
+  
+let xi = "xi = ";
+let yi = "yi = ";
+let zi = "zi = "; //Sets up xi, yi, zi
+  
+for(i = 1; i <= vcnt; i++)
+	{
+  	xi = xi+"if(index == "+(400-i)+","+x[i]+",";
+    yi = yi+"if(index == "+(400-i)+","+y[i]+",";
+    zi = zi+"if(index == "+(400-i)+","+z[i]+",";
+  } //Sets coordinates of vertices
+
+for(i = 1; i <= ecnt; i++)
+	{
+  	xi = xi+"if(index < "+i*eden+",lerp(index/"+eden+" - "+(i-1)+","+x[e1[i]]+","+x[e2[i]]+"),";
+    yi = yi+"if(index < "+i*eden+",lerp(index/"+eden+" - "+(i-1)+","+y[e1[i]]+","+y[e2[i]]+"),";
+    zi = zi+"if(index < "+i*eden+",lerp(index/"+eden+" - "+(i-1)+","+z[e1[i]]+","+z[e2[i]]+"),";
+  } //Inputs connections
+  
+xi = xi+"0";
+yi = yi+"0";
+zi = zi+"0"; //Vertices not included put at origin
+  
+for(i = 1; i <= parseInt(vcnt) + parseInt(ecnt); i++)
+	{
+  	xi = xi+")";
+    yi = yi+")";
+    zi = zi+")";
+  } //Close if statements
+  
+xi = xi+";";
+yi = yi+";";
+zi = zi+";";
+
+  document.getElementById("demo").innerHTML = output+xi+"\n\n"+yi+"\n\n"+zi;
 }
+  
+let vcnt = prompt("Amount of vertices?");
+let ecnt = prompt("Amount of edges?");
+let eden = Math.floor((400-vcnt)/ecnt);
+let output = "";
+
+let x = []; //Array of x coordinates
+let y = []; //Array of y coordinates
+let z = []; //Array of z coordinates
+let e1 = []; //Array of connection starts
+let e2 = []; //Array of connection ends
+
+for(i = 1; i <= vcnt; i++)
+	{
+  	x[i] = prompt("X-coordinate for vertex #"+i).toString();
+    y[i] = prompt("Y-coordinate for vertex #"+i).toString();
+    z[i] = prompt("Z-coordinate for vertex #"+i).toString();
+  } //Gets coordinates
+  
+for(i = 1; i <= ecnt; i++)
+	{
+  	e1[i] = prompt("Connect which vertex to another? (Connection number "+i+")");
+    e2[i] = prompt("Connect it to which vertex? (Connection number "+i+")")
+  } //Gets connections
+  
+let xi = "xi = ";
+let yi = "yi = ";
+let zi = "zi = "; //Sets up xi, yi, zi
+  
+for(i = 1; i <= vcnt; i++)
+	{
+  	xi = xi+"if(index == "+(400-i)+","+x[i]+",";
+    yi = yi+"if(index == "+(400-i)+","+y[i]+",";
+    zi = zi+"if(index == "+(400-i)+","+z[i]+",";
+  } //Sets coordinates of vertices
+
+for(i = 1; i <= ecnt; i++)
+	{
+  	xi = xi+"if(index < "+i*eden+",lerp(index/"+eden+" - "+(i-1)+","+x[e1[i]]+","+x[e2[i]]+"),";
+    yi = yi+"if(index < "+i*eden+",lerp(index/"+eden+" - "+(i-1)+","+y[e1[i]]+","+y[e2[i]]+"),";
+    zi = zi+"if(index < "+i*eden+",lerp(index/"+eden+" - "+(i-1)+","+z[e1[i]]+","+z[e2[i]]+"),";
+  } //Inputs connections
+  
+xi = xi+"0";
+yi = yi+"0";
+zi = zi+"0"; //Vertices not included put at origin
+  
+for(i = 1; i <= parseInt(vcnt) + parseInt(ecnt); i++)
+	{
+  	xi = xi+")";
+    yi = yi+")";
+    zi = zi+")";
+  } //Close if statements
+  
+xi = xi+";";
+yi = yi+";";
+zi = zi+";";
+
+document.getElementById("demo").innerHTML = output+xi+"\n\n"+yi+"\n\n"+zi;
 </script>
 
 </body>
