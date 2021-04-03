@@ -70,7 +70,7 @@ Currently, the code displays a 7x7x7 cube in perspective projection (realistic).
 
 `r1`, `r2`, and `r3` specify the order in which the axes of rotation are applied. This is necessary because three-dimensional rotation is non-commutative (order matters).
 
-`proj` determines projection style; 0 enables perspective (realistic) projection and 1 enables parallel projection.
+`proj` determines projection style; 0 enables perspective (realistic) projection and 1 enables parallel projection (think Roller Coaster Tycoon 2).
 
 `d` determines the distance of the origin in three-dimensional space from the "camera".
 
