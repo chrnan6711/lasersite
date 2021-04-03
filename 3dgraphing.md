@@ -2,9 +2,7 @@
 
 This expression allows for the graphing of real functions with two-dimensional variables.
 
-### Variables
-
-All variables are explained in the second section of the expression.
+### Code
 
 <details>
   <summary>View code</summary>
@@ -91,6 +89,9 @@ v = if(index > 400-(3*axisn+1),1,if(index < (res+1)^2,1,0));
 ```
 </details>
 
+### Parameters
+
+All parameters are explained in the second section of the expression.
 
 ### Examples
 
