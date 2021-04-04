@@ -10,6 +10,8 @@ This expression projects a skeuomorphic seven-segment display digital clock. In 
 ```
 brightness = 0.7;
 
+zoom = 1;
+
 timen = time + 0;
 
 h = lerp(fraction,120,240);
@@ -29,9 +31,9 @@ xf = if(index == 252 | index == 253, -5, if(mindex < 27, (mindex % 9) - 4, if(mi
 
 yf = if(index == 252, 6, if(index == 253, -6, if(mindex < 27, 12*floor(((mindex/27) * 3) - 1), if(mindex < 36, 2 + mindex - 27, if(mindex < 45, -(2 + mindex - 36), if(mindex < 54, 2 + mindex - 45, if(mindex < 63, -(2 + mindex - 54), 100))))))));
 
-x' = xf
+x' = zoom*xf
 
-y' = yf
+y' = zoom*yf
 
 v = brightness*(if(index == 252 | index == 253, ceil(sin(tau*timen)), if(index < 63,
 
@@ -139,3 +141,5 @@ if(digd == 9 & 35 < mindex & mindex < 45, 0, 1
 `brightness` determines, well, you know.
 
 `timen` allows the user to shift the input time (Unix time) by any amount of seconds.
+
+`zoom` changes the size of the projection.
