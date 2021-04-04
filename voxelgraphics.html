@@ -1,0 +1,192 @@
+<html style="background-color:black; color:orange; font-family:verdana;">
+  <head>
+    <script>
+      function get() {
+        let inputi = ``;
+        let outputxi = "xi = ";
+        let outputyi = "yi = ";
+        let outputzi = "z= = ";
+        let outputh = "h = ";
+        let outputs = "s = ";
+        let outputv = "v = ";
+
+        let xi = [];
+        let yi = [];
+        let zi = [];
+        let color = [];
+        let h = [];
+        let s = [];
+        let v = [];
+        let xis = "xi = ";
+        let yis = "yi = ";
+        let zis = "zi = ";
+        let hs = "h = ";
+        let ss = "s = ";
+        let vs = "v = ";
+
+        let input = inputi.replace(/.+?(?=end_header)/gs,"");
+
+        let parse = input.match(/[-]?\d+/g);
+        console.log(parse);
+
+        function sort(array,offset)
+        {
+          for(let i = offset;i<parse.length;i = i+6)
+          {
+            array.push(parse[i]);
+          }
+        }
+
+        sort(xi,0);
+        sort(yi,1);
+        sort(zi,2);
+
+        console.log(xi,yi,zi);
+
+        for(let i = 0;i < parse.length;i++)
+          {
+            if(Math.floor(i/3)%2 == 1)
+              {
+                color.push(parse[i]);
+              }
+          }
+
+        for(let i = 0;i < color.length;i = i+3)
+          {
+            let max = Math.max(color[i],color[i+1],color[i+2]);
+            let min = Math.min(color[i],color[i+1],color[i+2]);
+
+            v.push((max)/255);
+
+            if(v != 0)
+              {
+                s.push((max-min)/max);
+              }
+            else
+              {
+                s.push(0);
+              }
+            if(max == min)
+              {
+                h.push(0)
+              }
+            else if(max == color[i])
+              {
+                h.push(60*(0+((color[i+1]-color[i+2])/(max-min))));
+              }
+            else if(max == color[i+1])
+              {
+                h.push(60*(2+((color[i+2]-color[i])/(max-min))));
+              }
+            else if(max == color[i+2])
+              {
+                h.push(60*(4+((color[i]-color[i+1])/(max-min))));
+              }
+            else
+              {
+                h.push("");
+              }
+          }
+
+        for(let i = 0;i < v.length;i++)
+          {
+            xis = xis+"if(index == "+i.toString()+","+xi[i].toString()+",";
+            yis = yis+"if(index == "+i.toString()+","+yi[i].toString()+",";
+            zis = zis+"if(index == "+i.toString()+","+zi[i].toString()+",";
+            hs = hs+"if(index == "+i.toString()+","+h[i].toString()+",";
+            ss = ss+"if(index == "+i.toString()+","+s[i].toString()+",";
+            vs = vs+"if(index == "+i.toString()+","+v[i].toString()+",";
+          }
+
+        xis = xis + "0";
+        yis = yis + "0";
+        zis = zis + "0";
+        hs = hs + "0";
+        ss = ss + "0";
+        vs = vs + "0";
+
+        for(let i = 0;i < v.length;i++)
+          {
+            xis = xis+")";
+            yis = yis+")";
+            zis = zis+")";
+            hs = hs+")";
+            ss = ss+")";
+            vs = vs+")";
+          }
+
+        xis = xis + ";";
+        yis = yis + ";";
+        zis = zis + ";";
+        hs = hs + ";";
+        ss = ss + ";";
+        vs = vs + ";";
+
+        document.getElementById("expression").innerText = output+xi+"\n\n"+yi+"\n\n"+zi;
+      }
+      
+      function myFunction() {
+      var checkBox = document.getElementById("myCheck");
+      var text = document.getElementById("text");
+      if (checkBox.checked == true){
+        text.style.display = "block";
+      } else {
+         text.style.display = "none";
+      }
+    }
+      </script>
+  </head>
+  <body>
+    <h1>Voxel Graphics Expression Generator</h1>
+    <p>This program allows one to input voxel data in order to create three-dimensional voxel graphics.</p>
+    <p>Here's what the program will ask for, in order:</p>
+    <p>• Number of desired vertices (points)</p>
+    <p>• Number of desired edges (lines)</p>
+    <p>• x, y, and z coordinates of the vertices</p>
+    <p>• Start and end vertices of each edge</p>
+    <label for="myCheck">Include 3D injection:</label> 
+    <input type="checkbox" id="myCheck" onclick="myFunction()">
+    <p></p>
+    <button onclick="get()">Start the program!</button>
+    <p id="expression" style="color:white;"></p>
+    <pre id="text" style="display:none; font-family:verdana; color:white;">
+######################## Angles ###########################
+
+xr = 0; #Tumble forward
+
+yr = 0; #Counter-clockwise from front
+
+zr = 0; #Counter-clockwise from top
+
+#Specify order of application: (r1, then r2, then r3)
+
+r1 = yr; r2 = xr; r3 = zr;
+
+####################### Parameters ########################
+
+proj = 0;   #0 for perspective, 1 for parallel
+
+#0 has foreshortening (realism), 1 retains parallelism
+
+d = 10;     #Distance from projection (perspective only)
+
+zoom = 1;  #Size of projection
+
+h = 0;
+
+v = 1;
+
+s = 1;
+
+######## Calculations (don't worry about these) ###########
+
+x1 = xi*cos(r1)-zi*sin(r1); z1 = xi*sin(r1)+zi*cos(r1);
+y2 = yi*cos(r2)-z1*sin(r2); z2 = yi*sin(r2)+z1*cos(r2);
+x3 = x1*cos(r3)-y2*sin(r3); y3 = x1*sin(r3)+y2*cos(r3);
+x' = zoom*x3*if(proj,1,(d/(d+y3)));  #Horizontal output
+y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
+
+#####################3D by Chrnan6710######################
+    </pre>
+  </body>
+</html>
