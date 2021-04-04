@@ -56,4 +56,4 @@ y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
 
 </details>
 
-Because 2D expressions have no depth, there is no `yi` coordinate; hence, the injection adds one for you.
+Because 2D expressions have no depth, there is no `yi` coordinate by default; hence, the injection adds one for you.
