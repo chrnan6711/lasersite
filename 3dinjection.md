@@ -56,4 +56,6 @@ y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
 
 </details>
 
+3. Consult the [three-dimensional engine page](3dengine.md) for further instructions.
+
 Because 2D expressions have no depth, there is no `yi` coordinate by default; hence, the injection adds one for you.
