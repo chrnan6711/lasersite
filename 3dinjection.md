@@ -1,6 +1,6 @@
 # Three-dimensional Injection
 
-This code allows one to turn any 2D expression into a 3D one; basically, it places any 2D projection into 3D space.
+This code allows one to turn any 2D expression into a 3D one; basically, it places a 2D projection into 3D space.
 
 ### Instructions
 
