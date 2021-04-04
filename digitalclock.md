@@ -2,6 +2,8 @@
 
 This expression projects a skeuomorphic seven-segment display digital clock. In fact, its digits can be customized to whatever single-digit numbers the user may desire with `diga`, `digb`, `digc`, and `digd` (left to right). Currently, it displays your local time.
 
+### Code
+
 <details>
 <summary>View code</summary>
 
@@ -127,11 +129,12 @@ if(digd == 9 & 35 < mindex & mindex < 45, 0, 1
 
 )))))))))), 0
 
+```
+<details>
+
 ### Parameters
 
 `brightness` determines, well, you know.
 
 `timen` allows the user to shift the input time (Unix time) by any amount of seconds.
 ))))));
-```
-<details>
