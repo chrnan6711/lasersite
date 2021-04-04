@@ -1,6 +1,6 @@
 # Three-dimensional Injection
 
-This code allows one to turn any 2D expression into a 3D one; equivalently, it allows one to place any 2D projection into 3D space.
+This code allows one to turn any 2D expression into a 3D one; basically, it places any 2D projection into 3D space.
 
 ### Instructions
 
@@ -55,3 +55,5 @@ y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
 ```
 
 </details>
+
+Because 2D expressions have no depth, the `yi` coordinate must be added in order to open up that dimension.
