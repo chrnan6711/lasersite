@@ -22,4 +22,4 @@ Plain code ready for immediate use.
 
 Javascript programs which can create or modify expressions for you.
 
-- [Three-dimensional vector graphics](vectorgraphics.md)
+- [Three-dimensional Vector Graphics](vectorgraphics.md)
