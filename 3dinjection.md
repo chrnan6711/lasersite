@@ -56,4 +56,4 @@ y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
 
 </details>
 
-Because 2D expressions have no depth, the `yi` coordinate must be added in order to open up that dimension.
+Because 2D expressions have no depth, the `yi` coordinate was added in order to open up that dimension.
