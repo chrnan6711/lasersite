@@ -16,6 +16,8 @@ Plain code ready for immediate use.
 
 - [Three-dimensional Engine](3dengine.md)
 
+  - [Three-dimensional Injection](3dinjection.md)
+
 - [Three-dimensional Graphing](3dgraphing.md)
 
 ### Programs
