@@ -61,7 +61,7 @@
         
         document.getElementById("expression").innerText = output+xi+"\n\n"+yi+"\n\n"+zi;
         
-       function myFunction() {
+       function checkInjection() {
         var checkBox = document.getElementById("myCheck");
         var text = document.getElementById("text");
         if (checkBox.checked == true){
@@ -81,7 +81,7 @@
     <p>• x, y, and z coordinates of the vertices</p>
     <p>• Start and end vertices of each edge</p>
     <label for="myCheck">Include 3D injection:</label> 
-    <input type="checkbox" id="myCheck" onclick="myFunction()">
+    <input type="checkbox" id="myCheck" onclick="checkInjection()">
     <p></p>
     <button onclick="get()">Start the program!</button>
     <p id="expression"></p>
