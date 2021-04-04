@@ -101,6 +101,6 @@ Here are some fun functions to try!
 
 - Saddle: ```z = 0.05(xi^2 - yi^2)```
 
- -Dome: ```z = 10sqrt(1 - 0.01xi^2 - 0.01yi^2)```
+- Dome: ```z = 10sqrt(1 - 0.01xi^2 - 0.01yi^2)```
 
- -Waves: ```z = cos(sqrt(xi^2 + yi^2) - 2*time)```
+- Waves: ```z = cos(sqrt(xi^2 + yi^2) - 2*time)```
