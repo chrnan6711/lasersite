@@ -61,15 +61,16 @@
         
         document.getElementById("expression").innerText = output+xi+"\n\n"+yi+"\n\n"+zi;
       }
-        
-      function checkInjection() {
-       var checkBox = document.getElementById("myCheck");
-       var text = document.getElementById("text");
-       if (checkBox.checked == true){
-         text.style.display = "block";
-       } else {
-          text.style.display = "none";
+      
+      function myFunction() {
+      var checkBox = document.getElementById("myCheck");
+      var text = document.getElementById("text");
+      if (checkBox.checked == true){
+        text.style.display = "block";
+      } else {
+         text.style.display = "none";
       }
+    }
       </script>
   </head>
   <body>
@@ -81,7 +82,7 @@
     <p>• x, y, and z coordinates of the vertices</p>
     <p>• Start and end vertices of each edge</p>
     <label for="myCheck">Include 3D injection:</label> 
-    <input type="checkbox" id="myCheck" onclick="checkInjection()">
+    <input type="checkbox" id="myCheck" onclick="myFunction()">
     <p></p>
     <button onclick="get()">Start the program!</button>
     <p id="expression"></p>
