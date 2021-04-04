@@ -133,6 +133,7 @@ if(digd == 9 & 35 < mindex & mindex < 45, 0, 1
 
 ```
 </details>
+
 ### Parameters
 
 `brightness` determines, well, you know.
