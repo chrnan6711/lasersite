@@ -12,14 +12,14 @@ I don't care who you are or who you may like or hate; you may use my lasers. I w
 
 Plain code ready for immediate use.
 
-[Digital Clock and Seven-Segment Display](digitalclock.md)
+- [Digital Clock and Seven-Segment Display](digitalclock.md)
 
-[Three-dimensional Engine](3dengine.md)
+- [Three-dimensional Engine](3dengine.md)
 
-[Three-dimensional Graphing](3dgraphing.md)
+- [Three-dimensional Graphing](3dgraphing.md)
 
 ### Programs
 
 Javascript programs which can create or modify expressions for you.
 
-[Three-dimensional vector graphics](vectorgraphics.md)
+- [Three-dimensional vector graphics](vectorgraphics.md)
