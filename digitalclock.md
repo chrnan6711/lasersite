@@ -27,13 +27,9 @@ digd = floor((time%600)/60);
 
 mindex = index % 63;
 
-xf = if(index == 252 | index == 253, -5, if(mindex < 27, (mindex % 9) - 4, if(mindex < 45, -6, if(mindex < 63, 6, 100))) - if(index < 63, 26, if(index < 126, 10, if(index < 189, -10, if(index < 252, -26, 100))))-5;
+x' = zoom*if(index == 252 | index == 253, -5, if(mindex < 27, (mindex % 9) - 4, if(mindex < 45, -6, if(mindex < 63, 6, 100))) - if(index < 63, 26, if(index < 126, 10, if(index < 189, -10, if(index < 252, -26, 100))))-5;
 
-yf = if(index == 252, 6, if(index == 253, -6, if(mindex < 27, 12*floor(((mindex/27) * 3) - 1), if(mindex < 36, 2 + mindex - 27, if(mindex < 45, -(2 + mindex - 36), if(mindex < 54, 2 + mindex - 45, if(mindex < 63, -(2 + mindex - 54), 100))))))));
-
-x' = zoom*xf
-
-y' = zoom*yf
+y' = zoom*if(index == 252, 6, if(index == 253, -6, if(mindex < 27, 12*floor(((mindex/27) * 3) - 1), if(mindex < 36, 2 + mindex - 27, if(mindex < 45, -(2 + mindex - 36), if(mindex < 54, 2 + mindex - 45, if(mindex < 63, -(2 + mindex - 54), 100))))))));
 
 v = brightness*(if(index == 252 | index == 253, ceil(sin(tau*timen)), if(index < 63,
 
@@ -135,6 +131,8 @@ if(digd == 9 & 35 < mindex & mindex < 45, 0, 1
 
 ```
 </details>
+
+Currently, the code displays a decent-sized 12-hour green-blue clock.
 
 ### Parameters
 
