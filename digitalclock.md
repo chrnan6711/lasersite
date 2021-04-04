@@ -136,8 +136,8 @@ Currently, the code displays a decent-sized 12-hour green-blue clock.
 
 ### Parameters
 
-`brightness` determines, well, you know.
+- `brightness` determines, well, you know.
 
-`timen` allows the user to shift the input time (Unix time) by any amount of seconds.
+- `timen` allows the user to shift the input time (Unix time) by any amount of seconds.
 
-`zoom` changes the size of the projection.
+- `zoom` changes the size of the projection.
