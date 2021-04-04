@@ -138,16 +138,19 @@
   </head>
   <body>
     <h1>Voxel Graphics Expression Generator</h1>
-    <p>This program allows one to input voxel data in order to create three-dimensional voxel graphics.</p>
-    <p>Here's what the program will ask for, in order:</p>
-    <p>• Number of desired vertices (points)</p>
-    <p>• Number of desired edges (lines)</p>
-    <p>• x, y, and z coordinates of the vertices</p>
-    <p>• Start and end vertices of each edge</p>
+    <p>This program allows one to input voxel data (up to 400 voxels) in order to create three-dimensional voxel graphics.</p>
+    <p>Here's how to use the program:</p>
+    <ol>
+      <li>Design or import your voxel design in <a href="https://ephtracy.github.io/">MagicaVoxel</a>.</li>
+      <li>Save your design as a Point Clouds (*.ply) file.</li>
+      <li>Open the file in Notepad and copy the contents into the entry box below.</li>
+      <li>Click the "Run" button and watch the magic happen!</li>
+    </ol>
+    <textarea rows = "5"></textarea>
     <label for="myCheck">Include 3D injection:</label> 
     <input type="checkbox" id="myCheck" onclick="myFunction()">
     <p></p>
-    <button onclick="get()">Start the program!</button>
+    <button onclick="get()">Run</button>
     <p id="expression" style="color:white;"></p>
     <pre id="text" style="display:none; font-family:verdana; color:white;">
 ######################## Angles ###########################
