@@ -2,7 +2,7 @@
   <head>
     <script>
       function get() {
-        let inputi = ``;
+        let inputi = document.getElementById("plyinput");
         let outputxi = "xi = ";
         let outputyi = "yi = ";
         let outputzi = "z= = ";
@@ -131,7 +131,7 @@
       if (checkBox.checked == true){
         text.style.display = "block";
       } else {
-         text.style.display = "none";
+        text.style.display = "none";
       }
     }
       </script>
@@ -146,7 +146,7 @@
       <li>Open the file in Notepad and copy the contents into the entry box below.</li>
       <li>Click the "Run" button and watch the magic happen!</li>
     </ol>
-    <textarea rows = "5"></textarea>
+    <textarea rows = "5" id="plyinput"></textarea>
     <br>
     <label for="myCheck">Include 3D injection:</label> 
     <input type="checkbox" id="myCheck" onclick="myFunction()">
