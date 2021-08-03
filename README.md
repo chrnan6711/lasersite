@@ -25,3 +25,9 @@ Plain code ready for immediate use.
 Javascript programs which can create or modify expressions for you.
 
 - [Three-dimensional Vector Graphics](vectorgraphics.md)
+
+### Other
+
+Bits and bobs.
+
+- [Create expressions with more than 400 lasers](shift.md)
