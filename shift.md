@@ -10,17 +10,19 @@ Write your expression as if the laser projector *could* actually display more th
 
 Now that the expression has been written, a few things must be done to it in order to prepare it for proper projection.
 
-First, declare a new variable `shift = 0` at the beginning of the code.
+First, replace all instances of the word `index` in your code with `sindex`.
 
-Second, replace all instances of the word `index` in your code with `index+shift*400`.
+Next, declare a new variable `shift = 0` at the beginning of the code.
+
+Last, declare another new variable `sindex = index+shift*400`.
 
 ### Step 3: Usage
 
-There are a couple ways to go about using this new modified expression, each with their positives and negatives. Method 1 creates a perfect image, but uses more than one projector. Methods 2 and 3 use just one projector, but do not produce a perfect image. In all different methods, `x` refers to the lowest whole number such that 400x is greater than the amount of lasers you coded your expression to use. For example, if you coded your expression to use 1000 lasers, `x` should be 3.
+There are a couple ways to go about using this new modified expression, each with their positives and negatives. Method 1 creates a perfect image, but uses more than one projector. Methods 2 and 3 use just one projector, but do not produce a perfect image. In all different methods, the number `x` refers to the lowest whole number such that 400x is greater than the amount of lasers you coded your expression to use. For example, if you coded your expression to use 1000 lasers, `x` should be 3.
 
 #### Method 1: Projector Layering (multiple projectors)
 
-Procure `x` projectors. Paste and run the expression on each, but change the shift value in each projector to a different number between 0 and `x`. Turn them all on and use Q+click to place them in the exact same location. While this method creates a perfect image, it is somewhat high maintenance and also laggier.
+Procure `x` projectors. Paste and run the expression on each, but change the shift value in each projector to a different number ranging from 0 and `x-1`. Turn them all on and use Q+click to place them in the exact same location. While this method creates a perfect image, it is somewhat high maintenance and also laggier.
 
 #### Method 2: Discrete shifting (single projector)
 
