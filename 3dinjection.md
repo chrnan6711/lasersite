@@ -5,7 +5,7 @@ This code allows one to turn any 2D expression into a 3D one; basically, it plac
 ### Instructions
 
 1. In your code, change `x'` to `xi` and `y'` into `zi` (not `yi`!).
-2. Paste the following code at the end of your code:
+2. Paste the following code at the end of your own code:
 
 <details>
   <summary>View code:</summary>
@@ -16,15 +16,15 @@ yi = 0;
 
 ######################## Angles ###########################
 
-xr = 0; #Tumble forward
+#Specify order of rotation application: (Ex: xi, yi, zi)
 
-yr = 0; #Counter-clockwise from front
+d1 = zi; d2 = xi; d3 = yi;
 
-zr = 0; #Counter-clockwise from top
+r1 = 0;  # Rotation around d1 axis
 
-#Specify order of application: (r1, then r2, then r3)
+r2 = 0;  # Rotation around d2 axis
 
-r1 = yr; r2 = xr; r3 = zr;
+r3 = 0;  # Rotation around d3 axis
 
 ####################### Parameters ########################
 
@@ -34,7 +34,7 @@ proj = 0;   #0 for perspective, 1 for parallel
 
 d = 10;     #Distance from projection (perspective only)
 
-zoom = 1;  #Size of projection
+zoom = 30;  #Size of projection
 
 h = 0;
 
@@ -44,11 +44,11 @@ s = 1;
 
 ######## Calculations (don't worry about these) ###########
 
-x1 = xi*cos(r1)-zi*sin(r1); z1 = xi*sin(r1)+zi*cos(r1);
-y2 = yi*cos(r2)-z1*sin(r2); z2 = yi*sin(r2)+z1*cos(r2);
-x3 = x1*cos(r3)-y2*sin(r3); y3 = x1*sin(r3)+y2*cos(r3);
-x' = zoom*x3*if(proj,1,(d/(d+y3)));  #Horizontal output
-y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
+a1 = d2*cos(r1)-d3*sin(r1); a2 = d2*sin(r1)+d3*cos(r1);
+b1 = d1*cos(r2)-a2*sin(r2); b2 = d1*sin(r2)+a2*cos(r2);
+c1 = a1*cos(r3)-b1*sin(r3); b3 = a1*sin(r3)+b1*cos(r3);
+x' = zoom*c1*if(proj,1,(d/(d+b3)));  #Horizontal output
+y' = zoom*b2*if(proj,1,(d/(d+b3)));  #Vertical output
 
 #####################3D by Chrnan6710######################
 
