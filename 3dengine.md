@@ -71,6 +71,6 @@ Currently, the code displays a 7x7x7 cube in perspective projection (realistic) 
   
 - `proj` determines projection style; 0 enables perspective (realistic) projection and 1 enables parallel projection (think Roller Coaster Tycoon 2).
 
-- `d` determines the distance of the origin in three-dimensional space from the "camera" (your view).
+- `d` determines the distance of the origin in three-dimensional space from the "camera" (your view). If it is set lower than the distance of some points, strange artifacts will appear, so be careful.
 
 - `zoom` resizes the projection.
