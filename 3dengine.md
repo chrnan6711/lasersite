@@ -20,15 +20,15 @@ zi = lerp((floor(index/49)%7)/7,-3,4); #Down-up
 
 ######################## Angles ###########################
 
-xr = 0; #Tumble forward
+#Specify order of rotation application: (Ex: xi, yi, zi)
 
-yr = 0; #Counter-clockwise from front
+d1 = zi; d2 = xi; d3 = yi;
 
-zr = 0; #Counter-clockwise from top
+r1 = 0;  # Rotation around d1 axis
 
-#Specify order of application: (r1, then r2, then r3)
+r2 = 0;  # Rotation around d2 axis
 
-r1 = yr; r2 = xr; r3 = zr;
+r3 = 0;  # Rotation around d3 axis
 
 ####################### Parameters ########################
 
@@ -48,13 +48,11 @@ s = 1;
 
 ######## Calculations (don't worry about these) ###########
 
-x1 = xi*cos(r1)-zi*sin(r1); z1 = xi*sin(r1)+zi*cos(r1);
-y2 = yi*cos(r2)-z1*sin(r2); z2 = yi*sin(r2)+z1*cos(r2);
-x3 = x1*cos(r3)-y2*sin(r3); y3 = x1*sin(r3)+y2*cos(r3);
-
-x' = zoom*x3*if(proj,1,(d/(d+y3)));  #Horizontal output
-
-y' = zoom*z2*if(proj,1,(d/(d+y3)));  #Vertical output
+a1 = d2*cos(r1)-d3*sin(r1); a2 = d2*sin(r1)+d3*cos(r1);
+b1 = d1*cos(r2)-a2*sin(r2); b2 = d1*sin(r2)+a2*cos(r2);
+c1 = a1*cos(r3)-b1*sin(r3); b3 = a1*sin(r3)+b1*cos(r3);
+x' = zoom*c1*if(proj,1,(d/(d+b3)));  #Horizontal output
+y' = zoom*b2*if(proj,1,(d/(d+b3)));  #Vertical output
 
 #################Expression by Chrnan6710##################
 ```
@@ -64,14 +62,15 @@ Currently, the code displays a 7x7x7 cube in perspective projection (realistic) 
 
 ### Parameters
 
-- `xi`, `yi`, and `zi` are the left-right, forward-backward, and top-bottom coordinate inputs respectively, like `x'` and `y'`.
+- `xi`, `yi`, and `zi` are the left-right, forward-backward, and top-bottom coordinate inputs respectively, like `x'` and `y'` but in three dimensions.
 
-- `xr`, `yr`, and `zr` are the angles of rotation in radians (2π radians = 180 deg). The y-rotation is applied first, then x, then z.
+- `d1`, `d2`, and `d3` specify the order in which the rotation is applied. Set each equal to an axis in your preferred order. For example, if you want to first rotate around the x-axis, then y, then z, set `d1 = xi`, `d2 = yi`, and `d3 = zi`. 
+   - Positive rotation about the x-axis is tumbling forward, positive rotation about the y-axis is turning counter-clockwise from the front, and positive rotation about the z-axis is turning counter-clockwise from the top.
 
-- `r1`, `r2`, and `r3` specify the order in which the axes of rotation are applied. This is necessary because three-dimensional rotation is non-commutative (order matters).
-
+- `r1`, `r2`, and `r3` are the angles of rotation in radians (2π radians = 180 deg). `r1` is applied to the `d1` axis, then `r2` to `d2`, and then `r3` to `d3`.
+  
 - `proj` determines projection style; 0 enables perspective (realistic) projection and 1 enables parallel projection (think Roller Coaster Tycoon 2).
 
-- `d` determines the distance of the origin in three-dimensional space from the "camera".
+- `d` determines the distance of the origin in three-dimensional space from the "camera" (your view).
 
 - `zoom` resizes the projection.
